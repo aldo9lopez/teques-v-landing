@@ -209,7 +209,7 @@ export default function TequesLanding() {
           {/* Main title */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-tight drop-shadow-2xl">
             <img
-              src="/src/assets/teques-v-logo-square.png"
+              src="/assets/teques-v-logo-square.png"
               alt="Teques Logo"
               className="w-64 md:w-80 lg:w-96 mx-auto mb-1"
             />
@@ -375,7 +375,7 @@ export default function TequesLanding() {
             </h2>
             <p className="text-gray-500 mt-3 text-lg flex items-center justify-center gap-2">
               <MapPin size={16} style={{ color: CORAL }} />
-              Oaxtepec, Morelos. A unas cuadras de Six Flags Hurricane Harbor
+              Oaxtepec, Morelos. unas cuadras de Six Flags Hurricane Harbor
             </p>
           </div>
 
@@ -384,7 +384,7 @@ export default function TequesLanding() {
             {/* Large featured image - Alberca Principal con 1.jpg */}
             <div className="gallery-item col-span-2 row-span-2 rounded-3xl h-80 md:h-96 overflow-hidden relative group cursor-pointer">
               <img
-                src="/src/assets/1.jpg"
+                src="/assets/1.jpg"
                 alt="Alberca Principal"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -404,7 +404,7 @@ export default function TequesLanding() {
             {/* Imagen 2 - Áreas Comunes */}
             <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
               <img
-                src="/src/assets/2.jpg"
+                src="/assets/2.jpg"
                 alt="Áreas Comunes"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -423,7 +423,7 @@ export default function TequesLanding() {
             {/* Imagen 3 - Habitaciones */}
             <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
               <img
-                src="/src/assets/3.jpg"
+                src="/assets/3.jpg"
                 alt="Habitaciones"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -442,7 +442,7 @@ export default function TequesLanding() {
             {/* Imagen 4 - Jardín & Sombra */}
             <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
               <img
-                src="/src/assets/4.jpg"
+                src="/assets/4.jpg"
                 alt="Jardín & Sombra"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -461,7 +461,7 @@ export default function TequesLanding() {
             {/* Imagen sixflags.jpg - Cocina Compartida (ocupará el espacio que antes era "Foto próximamente") */}
             <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
               <img
-                src="/src/assets/sixflags.png"
+                src="/assets/sixflags.png"
                 alt="Six Flags"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -781,7 +781,7 @@ export default function TequesLanding() {
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
               <div className="flex items-center gap-3">
                 <img
-                  src="/src/assets/MYM-logo-blanco-horizontal.png"
+                  src="/assets/MYM-logo-blanco-horizontal.png"
                   alt="Mensa Youth"
                   className="h-15"
                 />
