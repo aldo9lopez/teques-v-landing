@@ -16,6 +16,14 @@ import {
   ArrowRight,
   Brain,
 } from "lucide-react";
+// Importaciones de imágenes
+import tequesLogo from "./assets/teques-v-logo-square.png";
+import img1 from "./assets/1.jpg";
+import img2 from "./assets/2.jpg";
+import img3 from "./assets/3.jpg";
+import img4 from "./assets/4.jpg";
+import sixflagsImg from "./assets/sixflags.png";
+import mensaLogo from "./assets/MYM-logo-blanco-horizontal.png";
 
 const POOL_BLUE = "#0EA5E9";
 const SUN_YELLOW = "#FCD34D";
@@ -209,7 +217,7 @@ export default function TequesLanding() {
           {/* Main title */}
           <h1 className="font-display text-4xl md:text-5xl lg:text-6xl text-white leading-tight drop-shadow-2xl">
             <img
-              src="/assets/teques-v-logo-square.png"
+              src={tequesLogo}
               alt="Teques Logo"
               className="w-64 md:w-80 lg:w-96 mx-auto mb-1"
             />
@@ -384,7 +392,7 @@ export default function TequesLanding() {
             {/* Large featured image - Alberca Principal con 1.jpg */}
             <div className="gallery-item col-span-2 row-span-2 rounded-3xl h-80 md:h-96 overflow-hidden relative group cursor-pointer">
               <img
-                src="/assets/1.jpg"
+                src={img1}
                 alt="Alberca Principal"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -404,7 +412,7 @@ export default function TequesLanding() {
             {/* Imagen 2 - Áreas Comunes */}
             <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
               <img
-                src="/assets/2.jpg"
+                src={img2}
                 alt="Áreas Comunes"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -423,7 +431,7 @@ export default function TequesLanding() {
             {/* Imagen 3 - Habitaciones */}
             <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
               <img
-                src="/assets/3.jpg"
+                src={img3}
                 alt="Habitaciones"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -442,7 +450,7 @@ export default function TequesLanding() {
             {/* Imagen 4 - Jardín & Sombra */}
             <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
               <img
-                src="/assets/4.jpg"
+                src={img4}
                 alt="Jardín & Sombra"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -461,7 +469,7 @@ export default function TequesLanding() {
             {/* Imagen sixflags.jpg - Cocina Compartida (ocupará el espacio que antes era "Foto próximamente") */}
             <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
               <img
-                src="/assets/sixflags.png"
+                src={sixflagsImg}
                 alt="Six Flags"
                 className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
               />
@@ -780,11 +788,7 @@ export default function TequesLanding() {
             {/* Logos */}
             <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
               <div className="flex items-center gap-3">
-                <img
-                  src="/assets/MYM-logo-blanco-horizontal.png"
-                  alt="Mensa Youth"
-                  className="h-15"
-                />
+                <img src={mensaLogo} alt="Mensa Youth" className="h-15" />
               </div>
             </div>
 
