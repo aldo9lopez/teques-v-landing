@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   Waves,
   Dices,
@@ -7,9 +7,10 @@ import {
   Check,
   Sun,
   MapPin,
-  Mail,
-  User,
+  CreditCard,
   Hash,
+  MessageCircle,
+  Phone,
   ChevronDown,
   Star,
   ArrowRight,
@@ -23,14 +24,6 @@ const CORAL = "#F97316";
 const DEEP_BLUE = "#0C4A6E";
 
 export default function TequesLanding() {
-  const [form, setForm] = useState({ nombre: "", email: "", mensa_id: "" });
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setSubmitted(true);
-  };
-
   return (
     <div className="font-sans bg-white overflow-x-hidden">
       <style>{`
@@ -221,19 +214,26 @@ export default function TequesLanding() {
               className="w-64 md:w-80 lg:w-96 mx-auto mb-1"
             />
             <span style={{ color: SUN_YELLOW }} className="drop-shadow-lg">
-              El mejor fin de Semana
+              El mejor fin de semana
             </span>
             <br />
-            del Verano
+            del año
           </h1>
           {/* Subtitle */}
-          <p
-            className="text-white text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-semibold leading-relaxed opacity-95"
-            style={{ textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}
-          >
-            Del 31 de Julio al 3 de Agosto. <br></br>Convive, juega y relájate
-            con la comunidad Mensa Youth Oaxtepec
-          </p>
+          <div className="text-white max-w-2xl mx-auto mb-10 mt-4">
+            <p
+              className="text-2xl md:text-3xl font-bold mb-2"
+              style={{ textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}
+            >
+              Del 31 de Julio al 3 de Agosto.
+            </p>
+            <p
+              className="text-lg md:text-xl font-semibold leading-relaxed opacity-95"
+              style={{ textShadow: "0 2px 8px rgba(0,0,0,0.3)" }}
+            >
+              Convive, juega y relájate con la comunidad Mensa Youth México
+            </p>
+          </div>
 
           {/* CTA Button */}
           <button
@@ -306,7 +306,7 @@ export default function TequesLanding() {
               },
               {
                 icon: <Dices size={36} />,
-                title: "Juegos de Mesa Eternos",
+                title: "Juegos de Mesa",
                 desc: "Estrategia, bluff y risas interminables. Las noches en Oaxtepec nunca se olvidan.",
                 color: CORAL,
                 bg: "#FFF7ED",
@@ -365,89 +365,118 @@ export default function TequesLanding() {
               className="text-sm font-bold tracking-widest uppercase"
               style={{ color: POOL_BLUE }}
             >
-              Nuestra Sede
+              La sede
             </span>
             <h2
               className="font-display text-4xl md:text-5xl mt-2"
               style={{ color: DEEP_BLUE }}
             >
-              Nuestra Sede en Oaxtepec
+              Para este año rentaremos un espectacular airbnb en Oaxtepec
             </h2>
             <p className="text-gray-500 mt-3 text-lg flex items-center justify-center gap-2">
               <MapPin size={16} style={{ color: CORAL }} />
-              Oaxtepec, Morelos — A minutos de Six Flags Hurricane Harbor
+              Oaxtepec, Morelos. A unas cuadras de Six Flags Hurricane Harbor
             </p>
           </div>
 
           {/* Gallery grid */}
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {/* Large featured image */}
-            <div className="gallery-item col-span-2 row-span-2 rounded-3xl h-80 md:h-96 flex flex-col items-center justify-center gap-3 cursor-pointer">
-              <div
-                className="w-16 h-16 rounded-full flex items-center justify-center"
-                style={{ background: "#BAE6FD" }}
-              >
-                <Waves size={28} style={{ color: POOL_BLUE }} />
+            {/* Large featured image - Alberca Principal con 1.jpg */}
+            <div className="gallery-item col-span-2 row-span-2 rounded-3xl h-80 md:h-96 overflow-hidden relative group cursor-pointer">
+              <img
+                src="/src/assets/1.jpg"
+                alt="Alberca Principal"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              {/* Overlay con información */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-6">
+                <div className="flex items-center gap-2 mb-2">
+                  <div className="w-8 h-8 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm">
+                    <Waves size={18} style={{ color: "#BAE6FD" }} />
+                  </div>
+                  <span className="font-display text-white text-lg">
+                    Fachada y Alberca
+                  </span>
+                </div>
               </div>
-              <span
-                className="font-display text-base"
-                style={{ color: POOL_BLUE }}
-              >
-                Alberca Principal
-              </span>
-              <span className="text-xs text-gray-400">
-                📸 Foto próximamente
-              </span>
             </div>
 
-            {[
-              {
-                label: "Áreas Comunes",
-                icon: <Users size={22} style={{ color: CORAL }} />,
-                iconBg: "#FED7AA",
-              },
-              {
-                label: "Habitaciones",
-                icon: <Star size={22} style={{ color: "#8B5CF6" }} />,
-                iconBg: "#EDE9FE",
-              },
-              {
-                label: "Jardín & Sombra",
-                icon: <Sun size={22} style={{ color: "#10B981" }} />,
-                iconBg: "#D1FAE5",
-              },
-              {
-                label: "Cocina Compartida",
-                icon: <Zap size={22} style={{ color: "#F59E0B" }} />,
-                iconBg: "#FEF3C7",
-              },
-            ].map((item, i) => (
-              <div
-                key={i}
-                className="gallery-item rounded-2xl h-36 md:h-44 flex flex-col items-center justify-center gap-2 cursor-pointer"
-              >
-                <div
-                  className="w-10 h-10 rounded-full flex items-center justify-center"
-                  style={{ background: item.iconBg }}
-                >
-                  {item.icon}
+            {/* Imagen 2 - Áreas Comunes */}
+            <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
+              <img
+                src="/src/assets/2.jpg"
+                alt="Áreas Comunes"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-3">
+                <div className="flex items-center gap-1 mb-1">
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm">
+                    <Users size={14} style={{ color: "#FED7AA" }} />
+                  </div>
+                  <span className="font-semibold text-white text-xs">
+                    Áreas Comunes
+                  </span>
                 </div>
-                <span
-                  className="font-semibold text-sm"
-                  style={{ color: DEEP_BLUE }}
-                >
-                  {item.label}
-                </span>
-                <span className="text-xs text-gray-400">
-                  📸 Foto próximamente
-                </span>
               </div>
-            ))}
-          </div>
+            </div>
 
-          <p className="text-center text-gray-400 text-sm mt-6 italic">
-            * Las fotos de la propiedad se publicarán pronto. ¡Stay tuned!
-          </p>
+            {/* Imagen 3 - Habitaciones */}
+            <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
+              <img
+                src="/src/assets/3.jpg"
+                alt="Habitaciones"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-3">
+                <div className="flex items-center gap-1 mb-1">
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm">
+                    <Star size={14} style={{ color: "#EDE9FE" }} />
+                  </div>
+                  <span className="font-semibold text-white text-xs">
+                    Habitaciones
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Imagen 4 - Jardín & Sombra */}
+            <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
+              <img
+                src="/src/assets/4.jpg"
+                alt="Jardín & Sombra"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-3">
+                <div className="flex items-center gap-1 mb-1">
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm">
+                    <Sun size={14} style={{ color: "#D1FAE5" }} />
+                  </div>
+                  <span className="font-semibold text-white text-xs">
+                    Comedor & Sombra
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Imagen sixflags.jpg - Cocina Compartida (ocupará el espacio que antes era "Foto próximamente") */}
+            <div className="gallery-item rounded-2xl h-36 md:h-44 overflow-hidden relative group cursor-pointer">
+              <img
+                src="/src/assets/sixflags.png"
+                alt="Six Flags"
+                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent flex flex-col justify-end p-3">
+                <div className="flex items-center gap-1 mb-1">
+                  <div className="w-6 h-6 rounded-full flex items-center justify-center bg-white/20 backdrop-blur-sm">
+                    <Zap size={14} style={{ color: "#FEF3C7" }} />
+                  </div>
+                  <span className="font-semibold text-white text-xs">
+                    Six Flags
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -493,7 +522,7 @@ export default function TequesLanding() {
             {/* Includes */}
             <div className="text-left space-y-4 mb-8">
               {[
-                "3 Noches de Hospedaje",
+                "3 Noches de Hospedaje (31 de Julio - 3 de Agosto)",
                 "Alimentos Incluidos (Desayuno, Comida, Cena)",
                 "Acceso a todas las actividades en la casa",
               ].map((item, i) => (
@@ -519,7 +548,7 @@ export default function TequesLanding() {
                   .scrollIntoView({ behavior: "smooth" })
               }
             >
-              ¡Aparta tu lugar ahora!
+              ¡Aparta tu lugar con $650!
               <ArrowRight size={22} />
             </button>
 
@@ -604,159 +633,163 @@ export default function TequesLanding() {
               className="text-sm font-bold tracking-widest uppercase"
               style={{ color: POOL_BLUE }}
             >
-              Registro
+              Aparta tu lugar
             </span>
             <h2
               className="font-display text-4xl md:text-5xl mt-2"
               style={{ color: DEEP_BLUE }}
             >
-              ¡Cuenta conmigo!
+              ¡Nos vemos en Teques!
             </h2>
             <p className="text-gray-500 mt-3 text-lg">
-              Llena el formulario y te contactaremos con todos los detalles.
+              Sigue estos pasos para apartar tu lugar en el fin de semana.
             </p>
           </div>
 
-          {submitted ? (
-            <div
-              className="rounded-3xl p-12 text-center shadow-xl"
-              style={{
-                background: "linear-gradient(135deg, #0EA5E9, #14B8A6)",
-              }}
-            >
-              <div className="text-6xl mb-4">🎉</div>
-              <h3 className="font-display text-3xl text-white mb-3">
-                ¡Ya casi!
-              </h3>
-              <p className="text-white opacity-90 text-lg">
-                Recibimos tu registro. Pronto te contactaremos con los detalles
-                de pago y el itinerario completo.
+          <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-blue-50">
+            {/* Depósito Inicial */}
+            <div className="mb-8 text-center">
+              <div className="inline-block bg-gradient-to-r from-blue-500 to-teal-400 rounded-full px-6 py-3 mb-4">
+                <span className="font-display text-2xl md:text-3xl text-white">
+                  $650 MXN
+                </span>
+              </div>
+              <p className="text-gray-600 text-lg">
+                Depósito inicial para apartar tu lugar
               </p>
             </div>
-          ) : (
-            <div className="bg-white rounded-3xl p-8 md:p-10 shadow-2xl border border-blue-50">
-              <div className="space-y-6">
-                <div>
-                  <label
-                    className="block text-sm font-bold mb-2"
-                    style={{ color: DEEP_BLUE }}
-                  >
-                    Nombre completo
-                  </label>
-                  <div className="relative">
-                    <User
-                      size={18}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Tu nombre"
-                      value={form.nombre}
-                      onChange={(e) =>
-                        setForm({ ...form, nombre: e.target.value })
-                      }
-                      className="input-field w-full pl-11 pr-4 py-4 rounded-2xl text-gray-700 bg-gray-50"
-                    />
-                  </div>
-                </div>
 
-                <div>
-                  <label
-                    className="block text-sm font-bold mb-2"
-                    style={{ color: DEEP_BLUE }}
-                  >
-                    Correo electrónico
-                  </label>
-                  <div className="relative">
-                    <Mail
-                      size={18}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-                    />
-                    <input
-                      type="email"
-                      placeholder="tu@email.com"
-                      value={form.email}
-                      onChange={(e) =>
-                        setForm({ ...form, email: e.target.value })
-                      }
-                      className="input-field w-full pl-11 pr-4 py-4 rounded-2xl text-gray-700 bg-gray-50"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label
-                    className="block text-sm font-bold mb-2"
-                    style={{ color: DEEP_BLUE }}
-                  >
-                    ID de Mensa
-                  </label>
-                  <div className="relative">
-                    <Hash
-                      size={18}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400"
-                    />
-                    <input
-                      type="text"
-                      placeholder="Tu número de socio"
-                      value={form.mensa_id}
-                      onChange={(e) =>
-                        setForm({ ...form, mensa_id: e.target.value })
-                      }
-                      className="input-field w-full pl-11 pr-4 py-4 rounded-2xl text-gray-700 bg-gray-50"
-                    />
-                  </div>
-                </div>
-
-                <button
-                  onClick={handleSubmit}
-                  className="cta-btn font-display text-white text-xl px-8 py-5 rounded-2xl w-full flex items-center justify-center gap-3"
+            <div className="space-y-8">
+              {/* Información Bancaria */}
+              <div className="bg-blue-50 rounded-2xl p-6">
+                <h3
+                  className="font-display text-xl mb-4 flex items-center gap-2"
+                  style={{ color: DEEP_BLUE }}
                 >
-                  Enviar Registro
-                  <ArrowRight size={22} />
-                </button>
+                  <CreditCard size={24} style={{ color: POOL_BLUE }} />
+                  Información para el Pago
+                </h3>
+                <p className="text-gray-600 mb-3">
+                  Realiza tu transferencia bancaria a la siguiente cuenta:
+                </p>
+                <div className="space-y-3 text-gray-700">
+                  <p>
+                    <span className="font-bold">Banco:</span> BBVA
+                  </p>
+                  <p>
+                    <span className="font-bold">Cuenta Clabe:</span>{" "}
+                    <span className="font-mono bg-white px-3 py-1 rounded-lg text-sm">
+                      012225015344232703
+                    </span>
+                  </p>
+                  <p>
+                    <span className="font-bold">Nombre del Titular:</span> Aldo
+                    Iván López
+                  </p>
+                </div>
+              </div>
+
+              {/* Concepto */}
+              <div className="bg-amber-50 rounded-2xl p-6">
+                <h3
+                  className="font-display text-xl mb-3 flex items-center gap-2"
+                  style={{ color: DEEP_BLUE }}
+                >
+                  <Hash size={24} style={{ color: "#F59E0B" }} />
+                  Concepto
+                </h3>
+                <p className="text-gray-600 mb-2">
+                  Al realizar tu pago, utiliza el concepto:
+                </p>
+                <div className="bg-white p-4 rounded-xl border-2 border-amber-200">
+                  <p
+                    className="font-mono font-bold text-lg text-center"
+                    style={{ color: DEEP_BLUE }}
+                  >
+                    Teques 5 + Tu nombre
+                  </p>
+                </div>
+                <p className="text-sm text-gray-500 mt-2 italic">
+                  Ejemplo: Teques 5 Juan Pérez
+                </p>
+              </div>
+
+              {/* Confirmación WhatsApp */}
+              <div className="bg-green-50 rounded-2xl p-6">
+                <h3
+                  className="font-display text-xl mb-3 flex items-center gap-2"
+                  style={{ color: DEEP_BLUE }}
+                >
+                  <MessageCircle size={24} style={{ color: "#10B981" }} />
+                  Confirmación de Pago
+                </h3>
+                <p className="text-gray-600 mb-3">
+                  Una vez realizado el pago, envíame un mensaje por WhatsApp con
+                  la captura de la transferencia:
+                </p>
+                <a
+                  href="https://wa.me/524773170288"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white font-bold px-6 py-3 rounded-xl transition-colors"
+                >
+                  <MessageCircle size={20} />
+                  477 317 0288
+                </a>
+              </div>
+
+              {/* Contacto */}
+              <div className="bg-purple-50 rounded-2xl p-6">
+                <h3
+                  className="font-display text-xl mb-3 flex items-center gap-2"
+                  style={{ color: DEEP_BLUE }}
+                >
+                  <Phone size={24} style={{ color: "#8B5CF6" }} />
+                  Número de Contacto
+                </h3>
+                <p className="text-gray-600 mb-2">
+                  ¿Tienes dudas o necesitas aclaraciones? Llámanos:
+                </p>
+                <a
+                  href="tel:+524773170288"
+                  className="inline-flex items-center gap-2 bg-purple-500 hover:bg-purple-600 text-white font-bold px-6 py-3 rounded-xl transition-colors"
+                >
+                  <Phone size={20} />
+                  477 317 0288
+                </a>
+              </div>
+
+              {/* Nota adicional */}
+              <div className="text-center pt-4 border-t border-gray-200">
+                <p className="text-gray-500 text-sm">
+                  ⏰ Una vez confirmado tu pago, recibirás toda la información
+                  del evento y el itinerario completo.
+                </p>
               </div>
             </div>
-          )}
+          </div>
         </div>
       </section>
 
       {/* ═══════════════════════════════════════
           FOOTER
       ═══════════════════════════════════════ */}
-      <footer
-        className="font-body py-12 px-6"
-        style={{ background: DEEP_BLUE }}
-      >
+      <footer className="font-body py-8 px-6" style={{ background: DEEP_BLUE }}>
         <div className="max-w-4xl mx-auto">
-          {/* Logos placeholder */}
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
-            {[
-              { label: "Mensa México", sub: "Inteligencia sin límites" },
-              { label: "Mensa Youth", sub: "La nueva generación" },
-            ].map((logo, i) => (
-              <div key={i} className="flex items-center gap-3">
-                <div
-                  className="w-12 h-12 rounded-2xl flex items-center justify-center"
-                  style={{
-                    background: "linear-gradient(135deg, #FCD34D, #F97316)",
-                  }}
-                >
-                  <Brain size={22} color="white" />
-                </div>
-                <div>
-                  <p className="font-display text-white text-sm">
-                    {logo.label}
-                  </p>
-                  <p className="text-blue-300 text-xs">{logo.sub}</p>
-                </div>
+          <div className="pt-8 text-center">
+            {/* Logos */}
+            <div className="flex flex-col md:flex-row items-center justify-center gap-8 mb-8">
+              <div className="flex items-center gap-3">
+                <img
+                  src="/src/assets/MYM-logo-blanco-horizontal.png"
+                  alt="Mensa Youth"
+                  className="h-15"
+                />
               </div>
-            ))}
-          </div>
+            </div>
 
-          <div className="border-t border-white border-opacity-10 pt-8 text-center">
             <p className="text-blue-300 text-sm mb-1">
-              Teques 2026 — Evento organizado por Mensa Youth México
+              Weekend 2026: Teques 5 — Evento organizado por Mensa Youth México
             </p>
             <p className="text-blue-400 text-xs opacity-60">
               © 2026 Mensa Youth México · Todos los derechos reservados
