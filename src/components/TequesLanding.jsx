@@ -17,13 +17,13 @@ import {
   Brain,
 } from "lucide-react";
 // Importaciones de imágenes
-import tequesLogo from "./assets/teques-v-logo-square.png";
-import img1 from "./assets/1.jpg";
-import img2 from "./assets/2.jpg";
-import img3 from "./assets/3.jpg";
-import img4 from "./assets/4.jpg";
-import sixflagsImg from "./assets/sixflags.png";
-import mensaLogo from "./assets/MYM-logo-blanco-horizontal.png";
+import tequesLogo from "../assets/teques-v-logo-square.png";
+import img1 from "../assets/1.jpg";
+import img2 from "../assets/2.jpg";
+import img3 from "../assets/3.jpg";
+import img4 from "../assets/4.jpg";
+import sixflagsImg from "../assets/sixflags.png";
+import mensaLogo from "../assets/MYM-logo-blanco-horizontal.png";
 
 const POOL_BLUE = "#0EA5E9";
 const SUN_YELLOW = "#FCD34D";
